@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd"> 
+
+<mapper namespace="main">
+
+	<!-- 오늘 날짜를 가지고 온다  -->
+	<select id="getToday"  resultType="java.lang.String">
+	  select now()
+	</select>
+	
+	<insert id="writeProc" parameterType="java.util.Map">
+		insert into springboard(title,content,email,pass) values(#{title},#{content},#{email},#{pass})
+	</insert>
+	
+	<update id="updateProc" parameterType="java.util.Map">
+		update springboard set content=#{content}, title=#{title}, email=#{email} where no=#{id}
+	</update>
+	
+	<select id="getList" parameterType="java.util.Map" resultType="java.util.HashMap">
+		select * from springboard
+	</select>
+	
+	<delete id="delNote" parameterType="java.lang.String">
+		delete from springboard where no=#{id}
+	</delete>
+	
+	<select id="getNote" parameterType="java.lang.String" resultType="java.util.HashMap">
+		<!-- select * from springboard  -->
+		select * from springboard where no=#{id}
+	</select>
+	
+</mapper>
