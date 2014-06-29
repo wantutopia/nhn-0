@@ -67,7 +67,7 @@
 				<td><textarea cols="60" rows="15" name="content" id="content">${result.content}</textarea></td>
 			</tr>
 			<tr>
-				<td colspan="2" align="center"><input type="button" value="전송"
+				<td colspan="2" align="center"><input type="button" value="수정"
 					onclick="doSubmit()"></td>
 			</tr>
 		</form>

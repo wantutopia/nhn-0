@@ -16,7 +16,7 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	
-	 <!-- 한글 인코딩 -->
+	 <!--  한글 인코딩 필터 -->
 	 <filter>
 		  <filter-name>encodingFilter</filter-name>
 		  <filter-class>
@@ -48,7 +48,7 @@
 		
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
-		<url-pattern>*.do</url-pattern>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 	
 </web-app>

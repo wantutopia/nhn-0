@@ -24,6 +24,14 @@ public class BoardController {
 	@Autowired
 	private MainService mainService;
 
+	@RequestMapping(value="/", method = RequestMethod.GET)
+	public ModelAndView home(@RequestParam Map<String, Object> paramMap, ModelMap model)
+			throws Throwable {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("redirect:/writeForm.do");
+		return mav;
+	}
+	
 	@RequestMapping("/hello.do")
 	public void hello(@RequestParam Map<String, Object> paramMap, ModelMap model)
 			throws Throwable {

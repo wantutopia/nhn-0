@@ -304,6 +304,13 @@
 			<artifactId>log4jdbc-remix</artifactId>
 			<version>0.2.7</version>
 		</dependency>
+		
+		<!-- //CUBRID Maven Repo 추가  -->
+		  <dependency>
+		   <groupId>cubrid</groupId>
+		   <artifactId>cubrid-jdbc</artifactId>
+		   <version>9.2.3.0005</version>
+		  </dependency>
 
 	</dependencies>
 
@@ -327,6 +334,19 @@
 			<id>mesir-repo</id>
 			<url>http://mesir.googlecode.com/svn/trunk/mavenrepo</url>
 		</repository>
+		
+		<!-- //CUBRID Maven Repo 추가  -->
+		<repository>
+		   <id>cubrid.release.repository</id>
+		  <url>http://maven.cubrid.org</url>
+		   <releases>
+		   <enabled>true</enabled>
+		   </releases>
+		   <snapshots>
+		   <enabled>false</enabled>
+		   </snapshots>
+		   </repository>
+		
 	</repositories>
 	<build>
 		<sourceDirectory>src</sourceDirectory>

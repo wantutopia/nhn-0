@@ -65,7 +65,7 @@
 			return;
 		}
 		else{
-			window.location.replace("writeForm.do?id="+no+"&action=del");
+			window.location.replace("delete.do?id="+no+"&action=del");
 		}
     }
     

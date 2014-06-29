@@ -13,7 +13,7 @@
 	</insert>
 	
 	<update id="updateProc" parameterType="java.util.Map">
-		update springboard set content=#{content}, title=#{title}, email=#{email} where no=#{id}
+		update springboard set "content"=#{content}, "title"=#{title}, "email"=#{email} where "no"=#{id}
 	</update>
 	
 	<select id="getList" parameterType="java.util.Map" resultType="java.util.HashMap">
@@ -21,12 +21,12 @@
 	</select>
 	
 	<delete id="delNote" parameterType="java.lang.String">
-		delete from springboard where no=#{id}
+		DELETE FROM springboard WHERE "no"=#{id}
 	</delete>
 	
 	<select id="getNote" parameterType="java.lang.String" resultType="java.util.HashMap">
 		<!-- select * from springboard  -->
-		select * from springboard where no=#{id}
+		select * from springboard where "no"=#{id}
 	</select>
 	
 </mapper>
