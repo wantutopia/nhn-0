@@ -13,7 +13,7 @@
 	</insert>
 	
 	<update id="updateProc" parameterType="java.util.Map">
-		update springboard set "content"=#{content}, "title"=#{title}, "email"=#{email} where "no"=#{id}
+		update springboard set "content"=#{content}, "title"=#{title}, "email"=#{email}, "moddate"=now() where "no"=#{id}
 	</update>
 	
 	<select id="getList" parameterType="java.util.Map" resultType="java.util.HashMap">
