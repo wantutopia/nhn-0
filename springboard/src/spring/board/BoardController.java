@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -90,6 +91,22 @@ public class BoardController {
 		System.out.println("title = " + paramMap.get("title"));
 		System.out.println("content = " + paramMap.get("content"));
 
+		String emailch = (String) paramMap.get("email");
+		System.out.println(emailch);
+		
+		//서버측 이메일 형식 체크
+		String emailPattern = "^[_a-z0-9-]+(.[_a-z0-9-]+)*@(?:\\w+\\.)+\\w+$";
+		//정규식을 벗어나면, 콘솔창에 출력
+		if(!Pattern.matches(emailPattern, emailch))
+		{
+			//return false
+			System.out.println("올바른 email이 아닙니다.");
+			ModelAndView mav = new ModelAndView();
+			mav.setViewName("redirect:/writeForm.do");
+			return mav;			
+		}
+
+		
 		// 저장하기 위하여 paramMap 을 넘긴다.
 		int writeCnt = mainService.writeProc(paramMap);
 
